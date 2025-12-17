@@ -26,9 +26,13 @@ function textBanner(data) {
     const paraBanner = document.createElement("p");
     paraBanner.textContent = data.phraseAccroche;
 
+    const btnBanner = document.createElement("button");
+    btnBanner.textContent = data.texteAppelAction;
+
     // AFFILIATION DU CONTENU CREE A LA DIV CREEE
     textCenterBanner.appendChild(titleBanner);
     textCenterBanner.appendChild(paraBanner);
+    textCenterBanner.appendChild(btnBanner);
 
     // AFFICHAGE TEXTE BANNIERE EN RELIANT LA DIV A LA VARIABLE HTML
     banner.appendChild(textCenterBanner);
