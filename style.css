@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+}
+
+header {
+    #navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #banner {
+        background-image: url(la-patisserie.jpg);
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
