@@ -1,46 +1,64 @@
 const apiUrl = "https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/json/patisserie.json";
 
 fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
         textBanner(data);
         displayAvantages(data);
         displayProducts(data);
         displayServices(data);
         displayTemoignages(data);
     })
-    .catch(error => console.error(error));
+    .catch(function(error) {
+        console.error("Erreur lors de la récupération des données :", error);
+    });
 
 function textBanner(data) {
     const banner = document.getElementById("banner");
-    const box = document.createElement("div");
-    box.classList.add("text-banner");
-    const h1 = document.createElement("h1");
-    h1.textContent = data.nomCommercial;
-    const p = document.createElement("p");
-    p.textContent = data.phraseAccroche;
-    const btn = document.createElement("button");
-    btn.textContent = data.texteAppelAction;
-    box.append(h1, p, btn);
-    banner.appendChild(box);
+
+    const textBannerDiv = document.createElement("div");
+    textBannerDiv.className = "text-banner";
+
+    const title = document.createElement("h1");
+    title.textContent = data.nomCommercial;
+
+    const para = document.createElement("p");
+    para.textContent = data.phraseAccroche;
+
+    const button = document.createElement("button");
+    button.textContent = data.texteAppelAction;
+
+    textBannerDiv.appendChild(title);
+    textBannerDiv.appendChild(para);
+    textBannerDiv.appendChild(button);
+
+    banner.appendChild(textBannerDiv);
 }
 
 function displayAvantages(data) {
-    const container = document.querySelector(".avantages-container");
-    data.avantagesClients.forEach((avantage, index) => {
+    const container = document.getElementById("avantages").getElementsByClassName("avantages-container")[0];
+
+    for (let i = 0; i < data.avantagesClients.length; i++) {
         const card = document.createElement("div");
-        card.classList.add("avantage-card");
+        card.className = "avantage-card";
+
         const h3 = document.createElement("h3");
-        h3.textContent = `Avantage ${index + 1}`;
+        h3.textContent = "Avantage " + (i + 1);
+
         const p = document.createElement("p");
-        p.textContent = avantage;
-        card.append(h3, p);
+        p.textContent = data.avantagesClients[i];
+
+        card.appendChild(h3);
+        card.appendChild(p);
         container.appendChild(card);
-    });
+    }
 }
 
 function displayProducts(data) {
-    const container = document.querySelector(".products-container");
+    const container = document.getElementById("products").getElementsByClassName("products-container")[0];
+
     const images = [
         "pexels-franki-frank-30461317.jpg",
         "pexels-nietjuhart-2014693.jpg",
@@ -48,53 +66,80 @@ function displayProducts(data) {
         "pexels-anh-nguyen-517648218-35286343.jpg",
         "pexels-karola-g-5237735.jpg"
     ];
-    data.produits.forEach((produit, index) => {
+
+    for (let i = 0; i < data.produits.length; i++) {
+        const produit = data.produits[i];
+
         const card = document.createElement("div");
-        card.classList.add("product-card");
+        card.className = "product-card";
+
         const img = document.createElement("img");
-        img.src = images[index];
+        img.src = images[i];
         img.alt = produit.nom;
+
         const h3 = document.createElement("h3");
         h3.textContent = produit.nom;
+
         const p = document.createElement("p");
         p.textContent = produit.description;
-        card.append(img, h3, p);
+
+        card.appendChild(img);
+        card.appendChild(h3);
+        card.appendChild(p);
         container.appendChild(card);
-    });
+    }
 }
 
 function displayServices(data) {
-    const container = document.querySelector(".services-container");
-    data.services.forEach(service => {
+    const container = document.getElementById("services").getElementsByClassName("services-container")[0];
+
+    for (let i = 0; i < data.services.length; i++) {
+        const service = data.services[i];
+
         const card = document.createElement("div");
-        card.classList.add("service-card");
+        card.className = "service-card";
+
         const h3 = document.createElement("h3");
         h3.textContent = service.nom;
+
         const p = document.createElement("p");
         p.textContent = service.description;
-        card.append(h3, p);
+
+        card.appendChild(h3);
+        card.appendChild(p);
         container.appendChild(card);
-    });
+    }
 }
 
 function displayTemoignages(data) {
-    const container = document.querySelector(".temoignages-container");
-    data.temoignages.forEach(temoignage => {
+    const container = document.getElementById("temoignages").getElementsByClassName("temoignages-container")[0];
+
+    for (let i = 0; i < data.temoignages.length; i++) {
+        const temoignage = data.temoignages[i];
+
         const card = document.createElement("div");
-        card.classList.add("temoignage-card");
+        card.className = "temoignage-card";
+
         const note = document.createElement("p");
-        note.classList.add("temoignage-note");
-        note.textContent = `Note: ${temoignage.note} / 5`;
+        note.className = "temoignage-note";
+        note.textContent = "Note: " + temoignage.note + " / 5";
+
         const commentaire = document.createElement("p");
-        commentaire.classList.add("temoignage-commentaire");
-        commentaire.textContent = `"${temoignage.commentaire}"`;
+        commentaire.className = "temoignage-commentaire";
+        commentaire.textContent = '"' + temoignage.commentaire + '"';
+
         const prenom = document.createElement("p");
-        prenom.classList.add("temoignage-prenom");
+        prenom.className = "temoignage-prenom";
         prenom.textContent = temoignage.prenom;
+
         const experience = document.createElement("p");
-        experience.classList.add("temoignage-experience");
+        experience.className = "temoignage-experience";
         experience.textContent = temoignage.typeExperience;
-        card.append(note, commentaire, prenom, experience);
+
+        card.appendChild(note);
+        card.appendChild(commentaire);
+        card.appendChild(prenom);
+        card.appendChild(experience);
         container.appendChild(card);
-    });
+    }
 }

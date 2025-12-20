@@ -83,7 +83,6 @@ section {
 
 .subtitle {
     font-size: 12px;
-    text-transform: uppercase;
     margin-bottom: 5px;
     color: #b94e72;
 }
@@ -202,10 +201,6 @@ footer {
     background-color: #ffe4ec;
 }
 
-footer p, .footer-links p, .footer-copy {
-    font-size: 12px;
-    color: #b94e72;
-}
 
 .footer-links {
     display: flex;
