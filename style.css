@@ -1,28 +1,215 @@
 * {
     margin: 0;
+    padding: 0;
 }
 
-header {
-    #navbar {
-        display: flex;
-        justify-content: space-between;
-    }
+body {
+    background-color: #f7edf0;
+    color: #292828;
+}
 
-    #banner {
-        background-image: url(la-patisserie.jpg);
-        height: 100vh;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8e9ef;
+    border-bottom: 1px solid #eba0ba;
+}
 
-        .text-banner {
-            max-width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-    }
+#navbar nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #d47192;
+    font-size: 14px;
+}
+
+#navbar button {
+    background-color: #cf697a;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 10px;
+    color: #fdf7f7;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#navbar button:hover {
+    background-color: #fea2b1;
+}
+
+#banner {
+    background-image: url("pexels-life-of-pix-134575.jpg");
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-banner {
+    max-width: 300px;
+    text-align: center;
+    background-color: #fab4caba;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.text-banner h1 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: #9e395a;
+}
+
+.text-banner p {
+    margin-bottom: 10px;
+    color: #a64a71;
+}
+
+.text-banner button {
+    background-color: #ff809e;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    color: #f1eded;
+    font-size: 14px;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #b94e72;
+}
+
+.description {
+    margin-bottom: 30px;
+    color: #a64a71;
+}
+
+.avantages-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.avantage-card {
+    max-width: 180px;
+    background-color: #ffe4ec;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.product-card {
+    width: 220px;
+    background-color: #fff0f5;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    margin: 8px 0 5px;
+    color: #b94e72;
+}
+
+.product-card p {
+    padding: 0 10px 10px;
+    color: #a64a71;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    max-width: 220px;
+    background-color: #ffe4ec;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.service-card h3 {
+    margin-bottom: 8px;
+    color: #b94e72;
+}
+
+.temoignages-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.temoignage-card {
+    max-width: 220px;
+    background-color: #fff0f5;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.temoignage-note {
+    font-weight: bold;
+    color: #b94e72;
+    margin-bottom: 5px;
+}
+
+.temoignage-commentaire {
+    font-style: italic;
+    color: #a64a71;
+    margin-bottom: 5px;
+}
+
+.temoignage-prenom {
+    font-weight: bold;
+    color: #b94e72;
+}
+
+.temoignage-experience {
+    font-size: 12px;
+    color: #a64a71;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #ffe4ec;
+}
+
+footer p, .footer-links p, .footer-copy {
+    font-size: 12px;
+    color: #b94e72;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
 }
