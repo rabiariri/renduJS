@@ -92,7 +92,7 @@ section {
     color: #a64a71;
 }
 
-.avantages-container {
+#avantages-container {
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -107,7 +107,7 @@ section {
     font-size: 14px;
 }
 
-.products-container {
+#products-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -137,7 +137,7 @@ section {
     color: #a64a71;
 }
 
-.services-container {
+#services-container {
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -157,7 +157,7 @@ section {
     color: #b94e72;
 }
 
-.temoignages-container {
+#temoignages-container {
     display: flex;
     justify-content: center;
     gap: 15px;

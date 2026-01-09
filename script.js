@@ -28,20 +28,15 @@ fetch(apiUrl)
 
         banniere.appendChild(texteBanniere);
 
-
-
-
-
         const avantages = document.getElementById("avantages-container");
 
         data.avantagesClients.forEach((avantage, index) => {
 
-            // création des cartes
             const texteavantages = document.createElement("div");
             texteavantages.classList.add("avantage-card");
 
             const havantages = document.createElement("h3");
-            havantages.textContent = `avantage ${index + 1}`;
+            havantages.textContent = `Avantage ${index + 1}`;
 
             const pavantages = document.createElement("p");
             pavantages.textContent = avantage;
@@ -53,7 +48,28 @@ fetch(apiUrl)
 
         });
 
+        const produits = document.getElementById("products-container");
 
+        data.produits.forEach(produit => {
+            const texteproduits = document.createElement("div");
+            texteproduits.classList.add("product-card");
+
+            const imgproduits = document.createElement("img");
+            imgproduits.src = produit["image-url"];
+            imgproduits.alt = produit.nom;
+
+            const hproduits = document.createElement("h3");
+            hproduits.textContent = produit.nom;
+
+            const pproduits = document.createElement("p");
+            pproduits.textContent = produit.description;
+
+            texteproduits.appendChild(imgproduits);
+            texteproduits.appendChild(hproduits);
+            texteproduits.appendChild(pproduits);
+
+            produits.appendChild(texteproduits);
+        });
 
 
     })
