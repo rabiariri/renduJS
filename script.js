@@ -27,8 +27,31 @@ fetch(apiUrl)
         texteBanniere.appendChild(btnbanniere);
 
         banniere.appendChild(texteBanniere);
-        
 
+
+
+
+
+        const avantages = document.getElementById("avantages-container");
+
+        data.avantagesClients.forEach((avantage, index) => {
+
+            // création des cartes
+            const texteavantages = document.createElement("div");
+            texteavantages.classList.add("avantage-card");
+
+            const havantages = document.createElement("h3");
+            havantages.textContent = `avantage ${index + 1}`;
+
+            const pavantages = document.createElement("p");
+            pavantages.textContent = avantage;
+
+            texteavantages.appendChild(havantages);
+            texteavantages.appendChild(pavantages);
+
+            avantages.appendChild(texteavantages);
+
+        });
 
 
 
