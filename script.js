@@ -71,6 +71,51 @@ fetch(apiUrl)
             produits.appendChild(texteproduits);
         });
 
+        const services = document.getElementById("services-container");
+
+        data.services.forEach(service => {
+            const texteservices = document.createElement("div");
+            texteservices.classList.add("service-card");
+
+            const hservice = document.createElement("h3");
+            hservice.textContent = service.nom;
+
+            const pservice = document.createElement("p");
+            pservice.textContent = service.description;
+
+            texteservices.appendChild(hservice);
+            texteservices.appendChild(pservice);
+
+            services.appendChild(texteservices);
+        });
+
+            const temoignages = document.getElementById("temoignages-container");
+
+            data.temoignages.forEach(vouch => {
+
+                const textetemoignages = document.createElement("div");
+                textetemoignages.classList.add("temoignage-card");
+
+                const htemoignage = document.createElement("h3");
+                htemoignage.textContent = vouch.prenom;
+
+                const p1temoignage = document.createElement("p");
+                p1temoignage.textContent = vouch.typeExperience;
+
+                const p2temoignage = document.createElement("p");
+                p2temoignage.textContent = `Note: ${vouch.note}/5`;
+
+                const p3temoignage = document.createElement("p");
+                p3temoignage.textContent = vouch.commentaire;
+
+                textetemoignages.appendChild(htemoignage);
+                textetemoignages.appendChild(p1temoignage);
+                textetemoignages.appendChild(p2temoignage);
+                textetemoignages.appendChild(p3temoignage);
+
+                temoignages.appendChild(textetemoignages);
+
+            });
 
     })
     .catch(function (error) {
